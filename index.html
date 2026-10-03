@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f8ff" />
+    <meta
+      name="description"
+      content="YK OFFICIAL 2027 — A new digital experience is launching soon."
+    />
+    <title>YK OFFICIAL 2027 | Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["DM Sans", "sans-serif"],
+              display: ["Manrope", "sans-serif"],
+            },
+            colors: { ink: "#15172b", violet: "#6547e8", blue: "#3478f6" },
+          },
+        },
+      };
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", sans-serif;
+        color: #15172b;
+        background: #f7f8ff;
+        overflow-x: hidden;
+      }
+      .ambient {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: -1;
+        background:
+          radial-gradient(
+            ellipse at 8% 12%,
+            rgba(130, 103, 255, 0.15),
+            transparent 32%
+          ),
+          radial-gradient(
+            ellipse at 92% 18%,
+            rgba(70, 153, 255, 0.13),
+            transparent 30%
+          ),
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(194, 135, 255, 0.12),
+            transparent 38%
+          ),
+          linear-gradient(135deg, #fbfcff, #f3f5ff 52%, #fbfaff);
+      }
+      .orb {
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(2px);
+        opacity: 0.55;
+        animation: float 12s ease-in-out infinite;
+      }
+      .one {
+        width: 300px;
+        height: 300px;
+        left: -110px;
+        top: 28%;
+        background: radial-gradient(
+          circle,
+          rgba(142, 116, 255, 0.2),
+          transparent
+        );
+      }
+      .two {
+        width: 380px;
+        height: 380px;
+        right: -150px;
+        top: 45%;
+        background: radial-gradient(
+          circle,
+          rgba(89, 160, 255, 0.19),
+          transparent
+        );
+        animation-delay: -5s;
+      }
+      .three {
+        width: 220px;
+        height: 220px;
+        right: 23%;
+        top: -100px;
+        background: radial-gradient(
+          circle,
+          rgba(211, 145, 255, 0.18),
+          transparent
+        );
+        animation-delay: -2s;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-22px);
+        }
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.67);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        box-shadow:
+          0 24px 80px rgba(53, 57, 105, 0.09),
+          inset 0 1px 0 #fff;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .gradient-text {
+        background: linear-gradient(100deg, #6547e8 5%, #9b43db 52%, #3478f6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .gradient-fill {
+        background: linear-gradient(115deg, #7049ec, #8c3fe1 52%, #3979f5);
+      }
+      .grid-pattern {
+        background-image:
+          linear-gradient(rgba(99, 102, 241, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 102, 241, 0.035) 1px, transparent 1px);
+        background-size: 36px 36px;
+        mask-image: linear-gradient(to bottom, #000, transparent 88%);
+      }
+      .count-card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(246, 247, 255, 0.72)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.95);
+        box-shadow:
+          0 10px 28px rgba(60, 65, 120, 0.07),
+          inset 0 1px 0 #fff;
+      }
+      .count-num {
+        font-family: Manrope, sans-serif;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.06em;
+      }
+      .pulse-dot {
+        box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.1);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.09);
+        }
+        50% {
+          box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.02);
+        }
+      }
+      .shine {
+        position: relative;
+        overflow: hidden;
+      }
+      .shine:after {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -40%;
+        width: 30%;
+        height: 300%;
+        transform: rotate(25deg);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.32),
+          transparent
+        );
+        animation: shine 5s ease-in-out infinite;
+      }
+      @keyframes shine {
+        0%,
+        65% {
+          left: -45%;
+        }
+        100% {
+          left: 130%;
+        }
+      }
+      .access-modal {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s;
+      }
+      .access-modal.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div class="ambient">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <div class="orb three"></div>
+    </div>
+    <div class="fixed inset-0 grid-pattern pointer-events-none z-[-1]"></div>
+    <header class="relative z-10 px-4 pt-4 sm:px-7 sm:pt-6">
+      <nav
+        class="glass mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 py-3 sm:px-6"
+      >
+        <a
+          href="#top"
+          class="flex min-w-0 items-center gap-3"
+          aria-label="YK OFFICIAL home"
+          ><span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white p-1.5 shadow-sm ring-1 ring-slate-200/80"
+            ><img
+              src="https://i.ibb.co/PHfHBqj/newlogoyk5.png"
+              alt="YK OFFICIAL new logo"
+              class="h-full w-full object-contain" /></span
+          ><span
+            class="font-display text-lg font-extrabold tracking-[.12em] text-slate-800 sm:text-xl"
+            >YK <span class="gradient-text">OFFICIAL</span
+            ><span
+              class="ml-1 align-top text-[9px] font-bold tracking-[.18em] text-violet-600"
+              >2027</span
+            ></span
+          ></a
+        >
+        <div class="hidden items-center gap-2 sm:flex">
+          <span
+            class="rounded-full border border-violet-100 bg-violet-50/80 px-3 py-1.5 text-xs font-semibold text-violet-700"
+            >NEXT CHAPTER</span
+          ><span class="text-xs font-medium text-slate-500">Nagpur, India</span>
+        </div>
+        <a
+          href="#launch"
+          class="rounded-xl border border-slate-200/80 bg-white/70 px-3.5 py-2 text-xs font-bold text-slate-700 transition hover:-translate-y-0.5 hover:border-violet-200 hover:text-violet-700 sm:px-4 sm:text-sm"
+          >Get in touch ↗</a
+        >
+      </nav>
+    </header>
+    <main
+      id="top"
+      class="relative z-10 mx-auto flex min-h-[calc(100svh-112px)] max-w-7xl items-center px-4 py-10 sm:px-7 sm:py-14 lg:py-16"
+    >
+      <div
+        class="grid w-full items-center gap-10 lg:grid-cols-[1.08fr_.92fr] lg:gap-14"
+      >
+        <section class="order-2 text-center lg:order-1 lg:text-left">
+          <div
+            class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/90 bg-white/65 px-4 py-2 text-[10px] font-bold tracking-[.2em] text-slate-600 shadow-sm backdrop-blur-xl sm:text-xs"
+          >
+            <span class="relative flex h-2 w-2"
+              ><span
+                class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400"
+              ></span
+              ><span
+                class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
+              ></span></span
+            >A NEW DIGITAL EXPERIENCE IS ON THE WAY
+          </div>
+          <p
+            class="mb-3 font-display text-xs font-bold uppercase tracking-[.34em] text-slate-500 sm:text-sm"
+          >
+            The future, redesigned
+          </p>
+          <h1
+            class="font-display text-[clamp(3.25rem,9vw,6.8rem)] font-extrabold leading-[.98] tracking-[-.075em] text-slate-900"
+          >
+            Something<br /><span class="gradient-text">remarkable</span><br />is
+            coming<span class="text-violet-500">.</span>
+          </h1>
+          <p
+            class="mx-auto mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8 lg:mx-0"
+          >
+            A fresh chapter of YK OFFICIAL is taking shape. A cleaner
+            experience, thoughtful digital solutions, and a new way to connect —
+            built for what comes next.
+          </p>
+          <div
+            class="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
+          >
+            <a
+              href="#launch"
+              class="shine gradient-fill inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-violet-500/20 transition hover:-translate-y-1"
+              >Explore the launch ↘</a
+            ><a
+              href="#launch"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/70 px-6 py-3.5 text-sm font-bold text-slate-700 shadow-sm transition hover:-translate-y-1 hover:border-violet-200 hover:text-violet-700"
+              >Contact us ↗</a
+            >
+          </div>
+          <div
+            class="mt-9 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] font-semibold tracking-wide text-slate-500 lg:justify-start"
+          >
+            <span>
+              <span class="mr-2 text-violet-500">●</span>DESIGNED WITH
+              PURPOSE</span
+            ><span class="hidden h-4 w-px bg-slate-300 sm:block"></span
+            ><span
+              ><span class="mr-2 text-blue-500">●</span>BUILT FOR TOMORROW</span
+            >
+          </div>
+        </section>
+        <section id="launch" class="order-1 lg:order-2">
+          <div
+            class="glass relative mx-auto max-w-[540px] overflow-hidden rounded-[2rem] p-5 sm:p-7 md:p-9"
+          >
+            <div
+              class="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-violet-300/20 blur-3xl"
+            ></div>
+            <div
+              class="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-blue-300/20 blur-3xl"
+            ></div>
+            <div class="relative">
+              <div class="flex items-center justify-between">
+                <span
+                  class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/65 px-3 py-1.5 text-[10px] font-bold tracking-[.16em] text-slate-600 sm:text-xs"
+                  ><span class="h-1.5 w-1.5 rounded-full bg-violet-500"></span
+                  >OFFICIAL LAUNCH</span
+                ><span
+                  class="font-display text-xs font-extrabold tracking-[.18em] text-slate-400"
+                  >YK / 27</span
+                >
+              </div>
+              <div
+                class="mx-auto mt-7 flex h-24 w-24 items-center justify-center rounded-[1.8rem] border border-white bg-white/80 p-4 shadow-[0_15px_45px_rgba(91,75,180,.13)] sm:h-28 sm:w-28 sm:p-5"
+              >
+                <img
+                  src="https://i.ibb.co/PHfHBqj/newlogoyk5.png"
+                  alt="YK OFFICIAL 2027 logo"
+                  class="h-full w-full object-contain"
+                />
+              </div>
+              <div class="mt-5 text-center">
+                <p
+                  class="text-[10px] font-bold uppercase tracking-[.28em] text-violet-600 sm:text-xs"
+                >
+                  Mark your calendar
+                </p>
+                <h2
+                  class="mt-2 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl"
+                >
+                  Launching in
+                </h2>
+                <p class="mt-2 text-xs text-slate-500 sm:text-sm">
+                  01 January 2027
+                  <span class="mx-1 text-slate-300">•</span> 12:00 PM IST
+                </p>
+              </div>
+              <div
+                class="mt-7 grid grid-cols-4 gap-2 sm:gap-3"
+                aria-label="Countdown timer"
+              >
+                <div
+                  class="count-card rounded-2xl px-1 py-4 text-center sm:rounded-3xl sm:py-5"
+                >
+                  <div
+                    id="days"
+                    class="count-num text-3xl font-extrabold text-slate-900 sm:text-4xl"
+                  >
+                    --
+                  </div>
+                  <div
+                    class="mt-1 text-[9px] font-bold uppercase tracking-[.15em] text-slate-500 sm:text-[10px]"
+                  >
+                    Days
+                  </div>
+                </div>
+                <div
+                  class="count-card rounded-2xl px-1 py-4 text-center sm:rounded-3xl sm:py-5"
+                >
+                  <div
+                    id="hours"
+                    class="count-num text-3xl font-extrabold text-slate-900 sm:text-4xl"
+                  >
+                    --
+                  </div>
+                  <div
+                    class="mt-1 text-[9px] font-bold uppercase tracking-[.15em] text-slate-500 sm:text-[10px]"
+                  >
+                    Hours
+                  </div>
+                </div>
+                <div
+                  class="count-card rounded-2xl px-1 py-4 text-center sm:rounded-3xl sm:py-5"
+                >
+                  <div
+                    id="minutes"
+                    class="count-num text-3xl font-extrabold text-slate-900 sm:text-4xl"
+                  >
+                    --
+                  </div>
+                  <div
+                    class="mt-1 text-[9px] font-bold uppercase tracking-[.15em] text-slate-500 sm:text-[10px]"
+                  >
+                    Minutes
+                  </div>
+                </div>
+                <div
+                  class="count-card rounded-2xl px-1 py-4 text-center sm:rounded-3xl sm:py-5"
+                >
+                  <div
+                    id="seconds"
+                    class="count-num text-3xl font-extrabold text-slate-900 sm:text-4xl"
+                  >
+                    --
+                  </div>
+                  <div
+                    class="mt-1 text-[9px] font-bold uppercase tracking-[.15em] text-slate-500 sm:text-[10px]"
+                  >
+                    Seconds
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-6 rounded-2xl border border-white/90 bg-white/55 p-4 sm:p-5"
+              >
+                <div class="flex items-center justify-between gap-3">
+                  <div>
+                    <p class="text-xs font-bold text-slate-800 sm:text-sm">
+                      The countdown is on
+                    </p>
+                    <p
+                      id="countdown-status"
+                      class="mt-1 text-[10px] text-slate-500 sm:text-xs"
+                    >
+                      We’re getting everything ready for you.
+                    </p>
+                  </div>
+                  <div
+                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <path d="M12 8v4l2.5 2.5" />
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M8 2h8M12 2v2" />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="mt-4 h-1.5 overflow-hidden rounded-full bg-slate-200/80"
+                >
+                  <div class="h-full w-[72%] rounded-full gradient-fill"></div>
+                </div>
+                <div
+                  class="mt-2 flex justify-between text-[9px] font-semibold uppercase tracking-[.12em] text-slate-400"
+                >
+                  <span>Preparing the new experience</span><span>2027</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p
+            class="mt-4 text-center text-[10px] font-medium tracking-wide text-slate-400"
+          >
+            A new year. A new look. The same commitment to quality.
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer class="relative z-10 px-4 pb-5 sm:px-7 sm:pb-7">
+      <div
+        class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 border-t border-slate-200/70 pt-4 text-center text-[10px] font-medium text-slate-500 sm:flex-row sm:text-left"
+      >
+        <p>© <span id="year">2026</span> YK OFFICIAL. All rights reserved.</p>
+        <p class="tracking-wide">
+          CRAFTED FOR THE NEXT CHAPTER
+          <span class="mx-1 text-violet-500">✦</span> NAGPUR, INDIA
+        </p>
+      </div>
+    </footer>
+    <div
+      id="access-modal"
+      class="access-modal fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/35 p-4 backdrop-blur-md"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="access-title"
+    >
+      <div
+        class="glass w-full max-w-md rounded-3xl p-6 text-center shadow-2xl sm:p-8"
+      >
+        <div
+          class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-100 text-violet-700"
+        >
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <rect x="4" y="10" width="16" height="11" rx="2" />
+            <path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" />
+          </svg>
+        </div>
+        <p
+          class="mt-5 text-[10px] font-bold uppercase tracking-[.25em] text-violet-600"
+        >
+          YK OFFICIAL • 2027
+        </p>
+        <h2
+          id="access-title"
+          class="mt-2 font-display text-2xl font-extrabold text-slate-900"
+        >
+          Access Restricted
+        </h2>
+        <p class="mx-auto mt-3 max-w-sm text-sm leading-6 text-slate-600">
+          This action is restricted on the YK OFFICIAL launch page. Please use
+          the visible page controls to explore the experience.
+        </p>
+        <p class="mt-3 text-[11px] text-slate-400">
+          This notice does not secure or conceal source code in the browser.
+        </p>
+        <button
+          id="close-modal"
+          class="gradient-fill mt-6 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-lg shadow-violet-500/20 transition hover:-translate-y-0.5"
+        >
+          Understood
+        </button>
+      </div>
+    </div>
+    <script>
+      // Launch time: 12:00 PM India Standard Time (UTC+05:30).
+      const launchAt = new Date("2027-01-01T12:00:00+05:30").getTime();
+      const fields = {
+        days: document.getElementById("days"),
+        hours: document.getElementById("hours"),
+        minutes: document.getElementById("minutes"),
+        seconds: document.getElementById("seconds"),
+      };
+      const statusText = document.getElementById("countdown-status");
+      const pad = (n) => String(n).padStart(2, "0");
+      function updateCountdown() {
+        const remaining = launchAt - Date.now();
+        if (remaining <= 0) {
+          Object.values(fields).forEach((el) => (el.textContent = "00"));
+          statusText.textContent = "We’re live. Welcome to YK OFFICIAL 2027!";
+          document.title = "YK OFFICIAL 2027 | We are live";
+          return;
+        }
+        fields.days.textContent = Math.floor(remaining / 86400000);
+        fields.hours.textContent = pad(
+          Math.floor((remaining % 86400000) / 3600000),
+        );
+        fields.minutes.textContent = pad(
+          Math.floor((remaining % 3600000) / 60000),
+        );
+        fields.seconds.textContent = pad(
+          Math.floor((remaining % 60000) / 1000),
+        );
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      document.getElementById("year").textContent = new Date().getFullYear();
+      // Discourages common shortcuts/context-menu actions; browser source inspection cannot be fully blocked.
+      const modal = document.getElementById("access-modal");
+      const showAccessNotice = () => modal.classList.add("show");
+      const closeAccessNotice = () => modal.classList.remove("show");
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        showAccessNotice();
+      });
+      document.addEventListener("keydown", (e) => {
+        const k = e.key.toLowerCase();
+        const blocked =
+          k === "f12" ||
+          (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) ||
+          (e.ctrlKey && ["u", "s"].includes(k)) ||
+          (e.metaKey && e.altKey && ["i", "j", "c"].includes(k));
+        if (blocked) {
+          e.preventDefault();
+          showAccessNotice();
+        }
+        if (k === "escape") closeAccessNotice();
+      });
+      document
+        .getElementById("close-modal")
+        .addEventListener("click", closeAccessNotice);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeAccessNotice();
+      });
+    </script>
+  </body>
+</html>
